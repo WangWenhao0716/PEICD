@@ -22,7 +22,7 @@ class PatternVisionTransformer(VisionTransformer):
         
         num_patches = self.patch_embed.num_patches
         
-        self.N = 1
+        self.N = 4
         
         self.num_pattern = 11 * self.N
         self.pos_embed_ = nn.Parameter(torch.zeros(1, num_patches + 1 + 11 * self.N, self.embed_dim))
