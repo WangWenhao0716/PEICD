@@ -1,5 +1,7 @@
 # PEICD
-The official implementation of "Pattern-Expandable Image Copy Detection"
+[In Submission] The official implementation of "Pattern-Expandable Image Copy Detection"
+
+![image](https://github.com/WangWenhao0716/PEICD/blob/main/PEICD.png)
 
 # Prepare Datasets
 
