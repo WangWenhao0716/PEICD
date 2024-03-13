@@ -49,6 +49,8 @@ do
 done
 ```
 
+Note: you can also generate the base and novel training images using the original images with ```generate.py```.
+
 ## Prepare Environment
 You can directly download our curated environment by
 ```
