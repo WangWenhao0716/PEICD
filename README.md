@@ -49,7 +49,7 @@ do
 done
 ```
 
-Note: you can also generate the base and novel training images using the original images with ```generate.py```.
+Note: you can also generate the base and novel training images using the original images with ```train_v1_name_same.py``` and ```train_v1_name.py```.
 
 ## Prepare Environment
 You can directly download our curated environment by
