@@ -192,3 +192,7 @@ Recall at rank 10: 0.85830
     year={2024},
 }
 ```
+
+# Contact
+
+If you have any questions, feel free to contact Wenhao Wang (wangwenhao0716@gmail.com).
