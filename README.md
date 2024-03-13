@@ -79,6 +79,12 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python train_single_source_gem_coslr_wb_balance_cos
 --height 224 --width 224
 ```
 
+# Test
+We denote the trained model as ```train_v1_vit_base_pattern_tune_4_minus.pth.tar```, or you can directly download it by
+
+```
+wget https://huggingface.co/datasets/WenhaoWang/PE-ICD/resolve/main/train_v1_vit_base_pattern_tune_4_minus.pth.tar
+```
 
 
 # Citation
