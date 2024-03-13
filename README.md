@@ -12,7 +12,12 @@ cat train_v1_name_part_aa train_v1_name_part_ab train_v1_name_part_ac > train_v1
   ```
 
 3. Download the novel training set
-
+  ```
+for letter in {a..c}; do
+    wget https://huggingface.co/datasets/WenhaoWang/PE-ICD/resolve/main/train_v1_name_same_part_a$letter
+done
+cat train_v1_name_same_part_aa train_v1_name_same_part_ab train_v1_name_same_part_ac > train_v1_name_same.tar
+  ```
 4. Download the base query set
 
 5. Download the novel query set
