@@ -37,6 +37,19 @@ do
 done
 ```
 
+# Prepare Environment
+You can directly download our curated environment by
+```
+wget https://huggingface.co/datasets/WenhaoWang/PE-ICD/resolve/main/torch21.tar
+```
+then
+```
+tar -xvf torch21.tar
+export PATH="$(pwd)/torch21/bin:$PATH"
+export LD_LIBRARY_PATH="$(pwd)/torch21/lib:$LD_LIBRARY_PATH"
+```
+
+Or, you can prepare an environment by yourself: our method only relies on basic libraries, such as PyTorch.
 
 
 # Citation
