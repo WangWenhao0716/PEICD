@@ -77,7 +77,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python train_single_source_gem_coslr_wb_balance_cos
 --height 224 --width 224
 ```
 ```
-!CUDA_VISIBLE_DEVICES=0,1,2,3 python train_single_source_gem_coslr_wb_balance_cos_ema_tune.py \
+CUDA_VISIBLE_DEVICES=0,1,2,3 python train_single_source_gem_coslr_wb_balance_cos_ema_tune.py \
 -ds train_v1_name_same -a vit_base_pattern_tune --margin 0.0 \
 --num-instances 4 -b 128 -j 8 --warmup-step 5 \
 --lr 0.00035 --iters 8000 --epochs 25 \
@@ -132,8 +132,54 @@ CUDA_VISIBLE_DEVICES=0 python extract_feature.py \
       --checkpoint train_v1_vit_base_pattern_4_minus.pth.tar --imsize 224 
 ```
 
+Matching with base patterns
+```
+python score_normalization.py \
+    --query_descs ./feature/train_v1_vit_base_pattern_tune_4_minus/query_{0..4}_v1_same.hdf5\
+    --db_descs ./feature/train_v1_vit_base_pattern_tune_4_minus/reference_{0..99}_v1_cold.hdf5 \
+    --train_descs ./feature/train_v1_vit_base_pattern_tune_4_minus/training_{0..99}_v1_cold.hdf5 \
+    --factor 2 --n 10 \
+    --o ./feature/train_v1_vit_base_pattern_tune_4_minus/predictions_train_v1_same_cold.csv \
+    --reduction avg --max_results 500_000
 
+python compute_metrics.py \
+--preds_filepath ./feature/train_v1_vit_base_pattern_tune_4_minus/predictions_train_v1_same_cold.csv \
+--gt_filepath ./gt_v1.csv
+```
+This should give
+```
+Track 1 results of 499999 predictions (10000 GT matches)
+Average Precision: 0.90683
+Recall at P90    : 0.87990
+Threshold at P90 : -0.110044
+Recall at rank 1:  0.94170
+Recall at rank 10: 0.95430
+```
 
+Matching with novel patterns
+
+```
+python score_normalization.py \
+    --query_descs ./feature/train_v1_vit_base_pattern_tune_4_minus/query_{0..4}_v1.hdf5\
+    --db_descs ./feature/train_v1_vit_base_pattern_tune_4_minus/reference_{0..99}_v1_cold.hdf5 \
+    --train_descs ./feature/train_v1_vit_base_pattern_tune_4_minus/training_{0..99}_v1_cold.hdf5 \
+    --factor 2 --n 10 \
+    --o ./feature/train_v1_vit_base_pattern_tune_4_minus/predictions_train_v1_cold.csv \
+    --reduction avg --max_results 500_000
+
+python compute_metrics.py \
+--preds_filepath ./feature/train_v1_vit_base_pattern_tune_4_minus/predictions_train_v1_cold.csv \
+--gt_filepath ./gt_v1.csv
+```
+This should give
+```
+Track 1 results of 500000 predictions (10000 GT matches)
+Average Precision: 0.73324
+Recall at P90    : 0.65560
+Threshold at P90 : -0.111441
+Recall at rank 1:  0.81130
+Recall at rank 10: 0.85830
+```
 
 
 # Citation
