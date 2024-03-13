@@ -89,7 +89,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python train_single_source_gem_coslr_wb_balance_cos
 --height 224 --width 224
 ```
 
-# Test
+## Test
 We denote the two trained models as ```train_v1_vit_base_pattern_4_minus.pth.tar``` and ```train_v1_vit_base_pattern_tune_4_minus.pth.tar```, or you can directly download it by
 
 ```
@@ -184,7 +184,7 @@ Recall at rank 10: 0.85830
 ```
 
 
-# Citation
+## Citation
 ```
 @inproceedings{
     wang2024peicd,
@@ -195,6 +195,6 @@ Recall at rank 10: 0.85830
 }
 ```
 
-# Contact
+## Contact
 
 If you have any questions, feel free to contact Wenhao Wang (wangwenhao0716@gmail.com).
