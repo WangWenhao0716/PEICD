@@ -189,7 +189,7 @@ Recall at rank 10: 0.85830
 @inproceedings{
     wang2024peicd,
     title={Pattern-Expandable Image Copy Detection},
-    author={Wang Wenhao and Sun Yifan and Yang Yi},
+    author={Wang, Wenhao and Sun, Yifan and Yang, Yi},
     booktitle={In submission},
     year={2024},
 }
