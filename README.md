@@ -1,5 +1,5 @@
 # PEICD
-[In Submission] The official implementation of "Pattern-Expandable Image Copy Detection"
+[IJCV 2024] The official implementation of "Pattern-Expandable Image Copy Detection"
 
 ![image](https://github.com/WangWenhao0716/PEICD/blob/main/PEICD.png)
 
@@ -190,7 +190,7 @@ Recall at rank 10: 0.85830
     wang2024peicd,
     title={Pattern-Expandable Image Copy Detection},
     author={Wang, Wenhao and Sun, Yifan and Yang, Yi},
-    booktitle={In submission},
+    booktitle={International Journal of Computer Vision},
     year={2024},
 }
 ```
