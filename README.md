@@ -1,5 +1,5 @@
 # PEICD
-[IJCV 2024] The official implementation of "Pattern-Expandable Image Copy Detection"
+[IJCV 2024] The official implementation of "[Pattern-Expandable Image Copy Detection](https://link.springer.com/article/10.1007/s11263-024-02140-5)"
 
 ![image](https://github.com/WangWenhao0716/PEICD/blob/main/PEICD.png)
 
